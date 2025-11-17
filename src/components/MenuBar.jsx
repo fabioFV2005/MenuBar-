@@ -6,11 +6,11 @@ const MenuBar = () => {
   const [activeSection, setActiveSection] = useState('Inicio');
 
   const menuItems = [
-    { name: 'Inicio', icon: '🏠' },
-    { name: 'Contenido', icon: '📚' },
-    { name: 'Servicios', icon: '⚡' },
-    { name: 'Contactos', icon: '📧' },
-    { name: 'Acerca de', icon: 'ℹ️' }
+    { name: 'Inicio' },
+    { name: 'Contenido' },
+    { name: 'Servicios' },
+    { name: 'Contactos' },
+    { name: 'Acerca de' }
   ];
 
   const handleMenuClick = (itemName) => {
@@ -22,7 +22,6 @@ const MenuBar = () => {
     <nav className="menubar">
       <div className="menubar-container">
         <div className="menubar-logo">
-          <span className="logo-icon">✨</span>
           <span className="logo-text">TuMarca</span>
         </div>
 
@@ -34,8 +33,7 @@ const MenuBar = () => {
                 className={`nav-link ${activeSection === item.name ? 'active' : ''}`}
                 onClick={() => handleMenuClick(item.name)}
               >
-                <span className="nav-icon">{item.icon}</span>
-                <span className="nav-text">{item.name}</span>
+                {item.name}
               </a>
             </li>
           ))}
